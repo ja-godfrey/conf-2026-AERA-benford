@@ -22,10 +22,7 @@ tables/
 # Keep only the Streamlit runtime code
 # ---------------------------------------------------------------------------
 code/*
-!code/streamlit_benford_app.py
-!code/streamlit_benford_triage.py
-!code/streamlit_catalog.py
-!code/streamlit_emad_utils.py
+!code/streamlit*.py
 
 
 # ---------------------------------------------------------------------------
