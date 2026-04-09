@@ -1,0 +1,79 @@
+# ============================================================================
+# conf-2026-AERA-benford — runtime-only gitignore
+# ============================================================================
+# Goal:
+#   Keep only the files required to run the Streamlit apps.
+#   Ignore the presentation, analysis notebooks/scripts, bulky raw data,
+#   and other artifacts that are not needed at runtime.
+
+
+# ---------------------------------------------------------------------------
+# Top-level non-runtime artifacts
+# ---------------------------------------------------------------------------
+ESSER_Expenditures_BenfordsLaw.pbix
+figures/
+old_reference/
+presentation/
+src/
+tables/
+
+
+# ---------------------------------------------------------------------------
+# Keep only the Streamlit runtime code
+# ---------------------------------------------------------------------------
+code/*
+!code/streamlit_benford_app.py
+!code/streamlit_benford_triage.py
+!code/streamlit_catalog.py
+!code/streamlit_emad_utils.py
+
+
+# ---------------------------------------------------------------------------
+# Keep only the data files the Streamlit apps read at runtime
+# ---------------------------------------------------------------------------
+data/raw/*
+!data/raw/esser-2023-supporting-documentation.xlsx
+
+data/derived/*
+!data/derived/benford_emad_aggregate.json
+!data/derived/benford_emad_columns.json
+!data/derived/benford_emad_states.json
+!data/derived/missingness_mechanism.json
+
+
+# ---------------------------------------------------------------------------
+# Python / Streamlit / editor noise
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+.streamlit/
+.venv/
+venv/
+env/
+ENV/
+
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.hypothesis/
+
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+.DS_Store
+Thumbs.db
+desktop.ini
+
+*.bak
+*.tmp
+*.orig
