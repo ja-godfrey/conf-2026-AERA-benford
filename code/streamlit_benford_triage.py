@@ -1,8 +1,16 @@
 """
 Compatibility entrypoint for older launch commands.
 
-The canonical dashboard now lives at `code/streamlit_esser_data_check.py`.
-Importing that module here preserves older Streamlit deployment paths.
+This wrapper executes the canonical dashboard script on every rerun so older
+deployment paths behave the same way as the current entrypoint.
 """
 
-from streamlit_esser_data_check import *  # noqa: F401,F403
+from pathlib import Path
+from runpy import run_path
+import sys
+
+HERE = Path(__file__).resolve().parent
+if str(HERE) not in sys.path:
+    sys.path.insert(0, str(HERE))
+
+run_path(str(HERE / "streamlit_benford_esser.py"), run_name="__main__")
