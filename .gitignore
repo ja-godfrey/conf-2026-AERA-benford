@@ -32,6 +32,7 @@ data/raw/*
 !data/raw/esser-2023-supporting-documentation.xlsx
 
 data/derived/*
+!data/derived/benford_analysis_summary.json
 !data/derived/benford_emad_aggregate.json
 !data/derived/benford_emad_columns.json
 !data/derived/benford_emad_states.json
